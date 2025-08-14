@@ -1,0 +1,26 @@
+{% extends "shortener/base.html" %}
+
+{% block title %}Shorten Your URL{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="text-center mb-4">🔗 URL Shortener</h1>
+                <form method="post" class="mb-3">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="url" name="long_url" class="form-control" placeholder="Enter your long URL" required>
+                        <button class="btn btn-primary" type="submit">Shorten</button>
+                    </div>
+                </form>
+                <p class="text-muted small text-center">
+                    Paste any URL to get a shortened version.<br>
+                    Links expire automatically after 7 days.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "shortener/base.html" %}
+
+{% block title %}Your Short URL{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="mb-3">🎉 Your Short URL</h1>
+                <div class="alert alert-success" role="alert">
+                    <a href="{{ short_url }}" class="fw-bold" target="_blank">{{ short_url }}</a>
+                </div>
+                <p class="text-muted">Expires on: <strong>{{ expiry_date|date:"d M Y H:i" }}</strong></p>
+                <a href="/" class="btn btn-outline-primary mt-3">Shorten Another</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
